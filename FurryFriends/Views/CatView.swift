@@ -1,14 +1,13 @@
 //
-//  ContentView.swift
+//  CatView.swift
 //  FurryFriends
 //
-//  Created by Russell Gordon on 2022-02-26.
+//  Created by Logan Snopek on 2022-03-01.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    
+struct CatView: View {
     // MARK: Stored properties
     
     // Address for main image
@@ -30,7 +29,7 @@ struct ContentView: View {
                 // NOTE: Output will not be shown unless this app is run in the "full" simulator
                 print("Button was pressed")
             }, label: {
-                Text("New Dog")
+                Text("New Cat")
             })
             .buttonStyle(.bordered)
             
@@ -39,12 +38,12 @@ struct ContentView: View {
         .task {
             
             // Example images for each type of pet
- //           let remoteCatImage = "https://purr.objects-us-east-1.dream.io/i/JJiYI.jpg"
-            let remoteDogImage = "https://images.dog.ceo/breeds/labrador/lab_young.JPG"
+            let remoteCatImage = "https://purr.objects-us-east-1.dream.io/i/JJiYI.jpg"
+//            let remoteDogImage = "https://images.dog.ceo/breeds/labrador/lab_young.JPG"
             
             // Replaces the transparent pixel image with an actual image of an animal
-            // Adjust according to your preference ☺️n  
-            currentImage = URL(string: remoteDogImage)!
+            // Adjust according to your preference ☺️n
+            currentImage = URL(string: remoteCatImage)!
                         
         }
 //        .navigationTitle("Furry Friends")
@@ -55,10 +54,8 @@ struct ContentView: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CatView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            ContentView()
-        }
+        CatView()
     }
 }
