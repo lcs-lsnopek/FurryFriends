@@ -19,6 +19,8 @@ struct ContentView: View {
     
     @State var favourites: [FurryFriends] = []
     
+    
+    
     // MARK: Computed properties
     var body: some View {
         
