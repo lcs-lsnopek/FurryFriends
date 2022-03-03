@@ -15,6 +15,8 @@ struct ContentView: View {
     // Starts as a transparent pixel – until an address for an animal's image is set
     @State var currentImage = URL(string: "https://www.russellgordon.ca/lcs/miscellaneous/transparent-pixel.png")!
     
+    @State var furryFriend = FurryFriends(message: "", status: "")
+    
     // MARK: Computed properties
     var body: some View {
         
@@ -28,7 +30,10 @@ struct ContentView: View {
 
             Button(action: {
                 // NOTE: Output will not be shown unless this app is run in the "full" simulator
-                print("Button was pressed")
+                Task {
+                    await loadNewJoke()
+
+                }
             }, label: {
                 Text("New Dog")
             })
@@ -53,6 +58,40 @@ struct ContentView: View {
     
     // MARK: Functions
     
+    func loadNewJoke() async {
+        
+        // Assemble the URL that points to the JSON endpoint
+        let url = URL(string: "https://dog.ceo/api/breeds/image/random")!
+        
+        // Define what type of request will be sent to the URL above
+        var request = URLRequest(url: url)
+        // This request will accept a JSON-formatted response
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        // Start a URL session to interact with the endpoint
+        let urlSession = URLSession.shared
+                    
+        // Try to fetch a new joke
+        do {
+            // Get the raw data from the endpoint
+            let (data, _) = try await urlSession.data(for: request)
+            
+            // Attempt to decode and return the object containing
+            // a new joke
+            // NOTE: We decode to DadJoke.self since the endpoint
+            //       returns a single JSON object
+            furryFriend = try JSONDecoder().decode(FurryFriends.self, from: data)
+            
+            // Replaces the transparent pixel image with an actual image of an animal
+            // Adjust according to your preference ☺️n
+            currentImage = URL(string: furryFriend.message)!
+            
+        } catch {
+            print("Could not retrieve / decode JSON from endpoint.")
+            print(error)
+        }
+        
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
