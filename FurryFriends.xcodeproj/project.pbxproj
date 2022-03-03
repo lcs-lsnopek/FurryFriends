@@ -15,6 +15,7 @@
 		8134B15627CA575E004DEB85 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8134B15527CA575E004DEB85 /* README.md */; };
 		B23E1BDE27CFD77A00569618 /* FurryFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23E1BDD27CFD77A00569618 /* FurryFriends.swift */; };
 		B2AA443B27CE66F700B63893 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AA443A27CE66F700B63893 /* CatView.swift */; };
+		B2AAD0C627D125F8004EDA30 /* CatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AAD0C527D125F8004EDA30 /* CatModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		8134B15527CA575E004DEB85 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B23E1BDD27CFD77A00569618 /* FurryFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurryFriends.swift; sourceTree = "<group>"; };
 		B2AA443A27CE66F700B63893 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
+		B2AAD0C527D125F8004EDA30 /* CatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				B23E1BDD27CFD77A00569618 /* FurryFriends.swift */,
+				B2AAD0C527D125F8004EDA30 /* CatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2AAD0C627D125F8004EDA30 /* CatModel.swift in Sources */,
 				8134B14727CA4862004DEB85 /* ContentView.swift in Sources */,
 				B23E1BDE27CFD77A00569618 /* FurryFriends.swift in Sources */,
 				8134B15427CA55F4004DEB85 /* RemoteImageView.swift in Sources */,
