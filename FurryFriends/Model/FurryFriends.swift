@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FurryFriends: Decodable{
+struct FurryFriends: Decodable, Hashable {
     
     let message: String
     let status: String

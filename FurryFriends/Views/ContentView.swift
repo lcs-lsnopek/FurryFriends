@@ -17,6 +17,8 @@ struct ContentView: View {
     
     @State var furryFriend = FurryFriends(message: "", status: "")
     
+    @State var favourites: [FurryFriends] = []
+    
     // MARK: Computed properties
     var body: some View {
         
@@ -27,7 +29,12 @@ struct ContentView: View {
             
             // Push main image to top of screen
             Spacer()
-
+            
+            
+            List(favourites, id: \.self) { currentFavourite in
+                Image(furryFriend.message)
+            }
+            
             Button(action: {
                 // NOTE: Output will not be shown unless this app is run in the "full" simulator
                 Task {
